@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Definir el ancho  */
+}
+
+.form-login{
+    width: 400px;
+    height: 340px;
+    background: #DB7093;
+    margin: auto;
+    margin-top: 180px;
+    box-shadow: 7px 13px 37px pink; /* x y difuminado color */
+    padding: 20px 30px;
+    border-top: 4px solid #8FBC8B;
+    color: white
+}
+
+.form-login h5 {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+}
+
+.options{
+    background: pink;
+}
+
+.controls {
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background-color: #8FBC8B;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buttons {
+    width: 100%;
+    height: 40px;
+    background: grey;
+    border: none;
+    color: azure;
+    margin-bottom: 16px;
+}

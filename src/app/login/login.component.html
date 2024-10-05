@@ -1,0 +1,11 @@
+<section class="form-login">
+    <h5>Login</h5>
+    <label for="userType">Login as:</label>
+    <select [(ngModel)]="userType" class="controls">
+        <option class="options" value="employee">Empleado</option>
+        <option class="options" value="admin">Admin</option>
+    </select>
+    <input class="controls" type="text" [(ngModel)]="email" value="" placeholder="Email">
+    <input class="controls" type="password" [(ngModel)]="password" value="" placeholder="Contraseña">
+    <button  (click)="login()">Login</button>
+</section>
