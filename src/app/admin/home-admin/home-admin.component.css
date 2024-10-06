@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.sectionClass{
+    width: 60%;
+    height: 90%;
+    border: solid;
+    border-color: black;
+    margin: 50px auto;
+}
+
+.navClass{
+    width: 100%;  /* Ajustar el nav al 100% del section */
+    height: 100px;
+    background: rgb(255, 104, 179);
+    margin: 0;  /* Sin márgenes negativos */
+}

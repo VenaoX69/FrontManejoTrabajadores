@@ -30,6 +30,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   // Tabla Matrail angular
-  displayedColumns: string[] = ['employeeId', 'names', 'lastNames', 'email', 'role'];
+  displayedColumns: string[] = ['acciones', 'identificacion', 'names', 'email', 'contractNumber', 'technicalRank'];
   dataSource = this.employees;
 }
