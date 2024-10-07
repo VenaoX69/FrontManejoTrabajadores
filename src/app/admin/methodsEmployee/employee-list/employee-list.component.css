@@ -1,0 +1,37 @@
+table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border: solid 3px rgb(186, 183, 183);
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: center;
+    margin: 0 auto;
+    color: gray;
+}
+  
+  .pagination-controls button {
+    margin: 0 5px; /* Espaciado entre los botones */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse sobre el botón */
+    color: gray;
+}
+  
+.pagination-controls span {
+    margin: 0 10px; /* Espaciado alrededor del texto */
+    font-size: 16px; /* Tamaño de fuente (ajusta según sea necesario) */
+}
+
+th {
+    background: rgb(255, 104, 179);
+    border: none;
+    padding: 4px;
+}
+
+td{
+    border: 2px solid #a3b1bb; /* Cambia el color y grosor de los bordes */
+    padding: 2px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+}

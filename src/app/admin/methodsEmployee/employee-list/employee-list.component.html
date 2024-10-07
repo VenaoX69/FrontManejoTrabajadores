@@ -1,46 +1,68 @@
-<table mat-table [dataSource]="employees" class="mat-elevation-z8">
+<table >
+  <thead>
+    <tr class="trHead">
+      <th>Acciones</th>
+      <th>Identificación</th>
+      <th>Nombre</th>
+      <th>Correo Electronico</th>
+      <th>N° Contrato</th>
+      <th>Escalafon telefonico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="trBody" *ngFor="let employee of employees | pagination:currentPage:pageSize">
+      <td>
+        <button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+      <td>{{ employee.identificacion }}</td>
+      <td>{{ employee.names }} {{employee.lastNames}}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.contractNumber }}</td>
+      <td>{{ employee.technicalRank }}</td>
+    </tr>
+  </tbody>
+</table>
 
-    <!-- Acciones Column -->
-  <ng-container matColumnDef="acciones">
-    <th mat-header-cell *matHeaderCellDef> Acciones </th>
-    <td mat-cell *matCellDef="let employee">
-      <button mat-button>Editar</button>
-      <button mat-button >Eliminar</button>
-    </td>
-  </ng-container>
+<!-- Control de paginación -->
+<div class="pagination-controls">
 
-    <!-- ID Column -->
-    <ng-container matColumnDef="identificacion">
-      <th mat-header-cell *matHeaderCellDef> identificacion </th>
-      <td mat-cell *matCellDef="let employee"> {{employee.identificacion}} </td>
-    </ng-container>
-  
-    <!-- Names Column -->
-    <ng-container matColumnDef="names">
-      <th mat-header-cell *matHeaderCellDef> Nombres </th>
-      <td mat-cell *matCellDef="let employee"> {{employee.names}} {{employee.lastNames}} </td>
-    </ng-container>
-  
-    <!-- Email Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef> Correo Electonico </th>
-      <td mat-cell *matCellDef="let employee"> {{employee.email}} </td>
-    </ng-container>
+  <!-- Mostrar el número de página actual y total -->
+  <span style="align-content: center;"> 
+    <button style="background: none; border: none;" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>  
+    {{ currentPage }} al de {{ totalPages }} 
+    <button style="background: none; border: none;" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+  </span>
 
-    <!-- Role Column -->
-  <ng-container matColumnDef="contractNumber">
-    <th mat-header-cell *matHeaderCellDef> N° Contrato </th>
-    <td mat-cell *matCellDef="let employee"> {{employee.contractNumber}} </td>
-  </ng-container>
 
-  <!-- Escalafon Column -->
-  <ng-container matColumnDef="technicalRank">
-    <th mat-header-cell *matHeaderCellDef> Escalafon Tecnico </th>
-    <td mat-cell *matCellDef="let employee"> {{employee.technicalRank}} </td>
-  </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+  <!-- Botón para ir a la primera página con doble flecha a la izquierda -->
+  <button style="background: none; border: none;" (click)="changePage(1)" [disabled]="currentPage === 1">
+    <mat-icon>first_page</mat-icon>
+  </button>
+
+
+  <!-- Botón de página anterior, deshabilitado si estamos en la primera página -->
+  <button style="background: none; border: none;" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+
+  <span style="align-content: center;">
+    {{ currentPage }}
+  </span>   
+
+  <!-- Botón de página siguiente, deshabilitado si estamos en la última página -->
+ <button style="background: none; border: none; " (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+    <mat-icon >keyboard_arrow_right</mat-icon>
+ </button>
+
+ <!-- Botón para ir a la última página con doble flecha a la derecha -->
+ <button style="background: none; border: none;" (click)="changePage(totalPages)" [disabled]="currentPage === totalPages">
+  <mat-icon>last_page</mat-icon>
+</button>
+</div>
   
   
