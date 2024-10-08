@@ -4,6 +4,7 @@ import { HomeComponent } from './employee/home/home.component';
 import { NgModule } from '@angular/core';
 import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 import { EmployeeListComponent } from './admin/methodsEmployee/employee-list/employee-list.component';
+import { GetEmployeeComponent } from './admin/methodsEmployee/get-employee/get-employee.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { path: 'homeUser', component: HomeComponent }, // Ruta para home del user
     { path: 'homeAdmin', component: HomeAdminComponent },
     { path: 'list', component: EmployeeListComponent},
+    { path: 'employeeEdit/:id', component:GetEmployeeComponent },
     { path: '**', redirectTo: '/login' } // Redirige cualquier ruta no encontrada al path
 ];
 

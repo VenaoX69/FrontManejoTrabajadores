@@ -12,10 +12,10 @@
   <tbody>
     <tr class="trBody" *ngFor="let employee of employees | pagination:currentPage:pageSize">
       <td>
-        <button>
+        <button (click)="editUser(employee.employeeId)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button>
+        <button (click)="deleteUser(employee.employeeId)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>

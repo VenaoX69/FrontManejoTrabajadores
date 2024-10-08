@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
+<body>
+    <section class="sectionClass">
+        <nav class="navClass">
+
+            <P style="color: white;">CESDE</P>
+
+            <section class="sectionNav" style="color: white;">
+
+                <button style="background: none; border: none;">
+                    <mat-icon style="font-size: 50px; height: 50px; width: 50px; color: white;">account_circle</mat-icon> 
+                  </button>
+                  USUARIO
+                  <button style="background: none; border: none;">
+                    <mat-icon style="font-size: 30px; height: 30px; width: 30px; color: white;">exit_to_app</mat-icon> 
+                  </button>
+            </section>
+        </nav>
+        <aside class="asideClass"><p class="pClass">EDITAR DOCENTE</p></aside>
+        <h1 class="divider"></h1>
+
+        <aside class="asideContainer">
+            <form class="formClass" action="">
+                <div class="form-row">
+                    <section>
+                        <label>Tipo identeficación</label>
+                        <br>
+                        <select name="identificationType" [(ngModel)]="employee.identificationType" class="selectType">
+                            <option value="CC">CC</option>
+                            <option value="CE">CE</option>
+                            <option value="DNI">DNI</option>
+                        </select>
+                    </section>
+                    
+                    <section>
+                        <label>Identificación</label>
+                        <br>
+                        <input name="identeficacion" class="inputsForm" type="number" [(ngModel)]="employee.identificacion">
+                    </section>
+    
+                    <section>
+                        <label>Nombres</label>
+                        <br>
+                        <input [(ngModel)]="employee.names" name="names" class="inputsForm" type="text">
+                    </section>
+    
+                    <section>
+                        <label>Apellidos</label>
+                        <br>
+                        <input [(ngModel)]="employee.lastNames" name="lastNames" class="inputsForm" type="text">
+                    </section>
+                </div>
+                
+                <div class="form-row">
+                    <section>
+                        <label>Correo Electónico</label>
+                        <br>
+                        <input [(ngModel)]="employee.email" name="email" class="inputsForm" type="email">
+                    </section>
+    
+                    <section>
+                        <label>Telefono Celular</label>
+                        <br>
+                        <input [(ngModel)]="employee.phone" name="phone" class="inputsForm" type="number">
+                    </section>
+    
+                    <section>
+                        <label>Ciudad Residencia</label>
+                        <br>
+                        <input [(ngModel)]="employee.cityOfResidence" name="cityOfResidence" class="inputsForm" type="text">
+                    </section>
+
+                    <section>
+                        <label>Numero de contrato</label>
+                        <br>
+                        <input [(ngModel)]="employee.contractNumber" name="contractNumber" type="number" class="inputsForm">
+                    </section>
+                </div>
+
+                <div class="form-row">
+                    <section>
+                        <label>Escalafón Técnico</label>
+                        <br>
+                        <select [(ngModel)]="employee.technicalRank" name="technicalRank" class="selectOptions">
+                            <option value="Tecnico">Técnico</option>
+                            <option value="Tecnologo">Tecnólogo</option>
+                            <option value="Profesional">Profesional</option>
+                            <option value="Ingeniero">Ingeniero</option>
+                        </select>
+                    </section>
+    
+                    <section>
+                        <label>Escalafón Extensión</label>
+                        <br>
+                        <select [(ngModel)]="employee.extensionRank" name="extensionRank" class="selectOptions">
+                            <option value="MinusOneYear">Técnico experiencia inferior 1 año </option>
+                            <option value="PlusOneYear">Técnico experiencia superior 1 año </option>
+                            <option value="Tecnologo">Tecnólogo</option>
+                            <option value="Profesional">Profesional </option>
+                        </select>
+                    </section>
+                </div>
+                <section class="button-container">
+                    <button>Atras</button>
+                    <button (click)="updateEmployee()" >Guardar</button>
+                </section>
+                
+
+            </form>
+        </aside>
+    </section>
+</body>
+</html>
