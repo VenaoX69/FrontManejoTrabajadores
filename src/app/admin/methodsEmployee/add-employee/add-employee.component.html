@@ -22,97 +22,101 @@
                   </button>
             </section>
         </nav>
-        <aside class="asideClass"><p class="pClass">EDITAR DOCENTE</p></aside>
+        <aside class="asideClass"><p class="pClass">CREAR DOCENTE</p></aside>
         <h1 class="divider"></h1>
 
         <aside class="asideContainer">
-            <form class="formClass" (ngSubmit)="updateEmployee()">
+            <form class="formClass" (ngSubmit)="addEmployee()">
                 <div class="form-row">
                     <section>
-                        <label>Tipo identeficación</label>
+                        <label>Tipo identificación</label>
                         <br>
-                        <select name="identificationType" [(ngModel)]="employee.identificationType" class="selectType">
+                        <select name="identificationType" class="selectType" [(ngModel)]="newEmployee.identificationType" required>
                             <option value="CC">CC</option>
                             <option value="CE">CE</option>
-                            <option value="DNI">DNI</option>
                         </select>
                     </section>
                     
                     <section>
                         <label>Identificación</label>
                         <br>
-                        <input name="identeficacion" class="inputsForm" type="number" [(ngModel)]="employee.identificacion">
+                        <input name="identificacion" class="inputsForm" type="text" [(ngModel)]="newEmployee.identificacion" required>
                     </section>
-    
+            
                     <section>
                         <label>Nombres</label>
                         <br>
-                        <input [(ngModel)]="employee.names" name="names" class="inputsForm" type="text">
+                        <input name="names" class="inputsForm" type="text" [(ngModel)]="newEmployee.names" required>
                     </section>
-    
+            
                     <section>
                         <label>Apellidos</label>
                         <br>
-                        <input [(ngModel)]="employee.lastNames" name="lastNames" class="inputsForm" type="text">
+                        <input name="lastNames" class="inputsForm" type="text" [(ngModel)]="newEmployee.lastNames" required>
                     </section>
                 </div>
                 
                 <div class="form-row">
                     <section>
-                        <label>Correo Electónico</label>
+                        <label>Correo Electrónico</label>
                         <br>
-                        <input [(ngModel)]="employee.email" name="email" class="inputsForm" type="email">
+                        <input name="email" class="inputsForm" type="email" [(ngModel)]="newEmployee.email" required>
                     </section>
-    
+            
                     <section>
-                        <label>Telefono Celular</label>
+                        <label>Teléfono Celular</label>
                         <br>
-                        <input [(ngModel)]="employee.phone" name="phone" class="inputsForm" type="number">
+                        <input name="phone" class="inputsForm" type="number" [(ngModel)]="newEmployee.phone" required>
                     </section>
-    
+            
                     <section>
                         <label>Ciudad Residencia</label>
                         <br>
-                        <input [(ngModel)]="employee.cityOfResidence" name="cityOfResidence" class="inputsForm" type="text">
+                        <input name="cityOfResidence" class="inputsForm" type="text" [(ngModel)]="newEmployee.cityOfResidence">
                     </section>
-
+            
                     <section>
-                        <label>Numero de contrato</label>
+                        <label>Número de Contrato</label>
                         <br>
-                        <input [(ngModel)]="employee.contractNumber" name="contractNumber" type="number" class="inputsForm">
+                        <input name="contractNumber" class="inputsForm" type="number" [(ngModel)]="newEmployee.contractNumber" required>
                     </section>
                 </div>
-
+            
                 <div class="form-row">
                     <section>
                         <label>Escalafón Técnico</label>
                         <br>
-                        <select [(ngModel)]="employee.technicalRank" name="technicalRank" class="selectOptions">
+                        <select name="technicalRank" class="selectOptions" [(ngModel)]="newEmployee.technicalRank" required>
                             <option value="Tecnico">Técnico</option>
                             <option value="Tecnologo">Tecnólogo</option>
                             <option value="Profesional">Profesional</option>
-                            <option value="Ingeniero">Ingeniero</option>
                         </select>
                     </section>
-    
+            
                     <section>
                         <label>Escalafón Extensión</label>
                         <br>
-                        <select [(ngModel)]="employee.extensionRank" name="extensionRank" class="selectOptions">
-                            <option value="MinusOneYear">Técnico experiencia inferior 1 año </option>
-                            <option value="PlusOneYear">Técnico experiencia superior 1 año </option>
+                        <select name="extensionRank" class="selectOptions" [(ngModel)]="newEmployee.extensionRank" required>
+                            <option value="MinusOneYear">Técnico experiencia inferior 1 año</option>
+                            <option value="PlusOneYear">Técnico experiencia superior 1 año</option>
                             <option value="Tecnologo">Tecnólogo</option>
-                            <option value="Profesional">Profesional </option>
+                            <option value="Profesional">Profesional</option>
                         </select>
                     </section>
+            
+                    <section>
+                        <label>Contraseña</label>
+                        <br>
+                        <input type="text" name="password" [(ngModel)]="newEmployee.password" required>
+                    </section>
                 </div>
+            
                 <section class="button-container">
-                    <button type="button" (click)="back()">Atras</button>
+                    <button type="button" (click)="back()">Atrás</button>
                     <button type="submit">Guardar</button>
                 </section>
-                
-
             </form>
+            
         </aside>
     </section>
 </body>

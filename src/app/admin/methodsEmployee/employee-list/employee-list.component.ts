@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee, EmployeeService } from '../../../employee/service/employee.service';
 import { CommonModule } from '@angular/common';
-import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { PaginationPipe } from './pagination.pipe';
 import { Router, RouterOutlet } from '@angular/router';
