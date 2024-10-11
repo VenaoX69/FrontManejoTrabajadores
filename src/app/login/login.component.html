@@ -5,7 +5,12 @@
         <option class="options" value="employee">Empleado</option>
         <option class="options" value="admin">Admin</option>
     </select>
-    <input class="controls" type="text" [(ngModel)]="email" value="" placeholder="Email">
-    <input class="controls" type="password" [(ngModel)]="password" value="" placeholder="Contraseña">
+    
+    <input id="email" class="controls" type="text" [(ngModel)]="email" [ngClass]="{error: emailError}" placeholder="Email">
+    <div *ngIf="emailError" class="error-message">Por favor, ingrese un email válido.</div>
+
+    <input id="password" class="controls" type="password" [(ngModel)]="password" [ngClass]="{error: passwordError}" placeholder="Contraseña">
+    <div *ngIf="passwordError" class="error-message">Por favor, ingrese su contraseña.</div>
+
     <button  (click)="login()">Login</button>
 </section>

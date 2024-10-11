@@ -24,4 +24,10 @@ export class HomeAdminComponent {
     console.log("Hiciste click");
     this.router.navigate(['/addEmployee']);
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    this.router.navigate(['/login']);
+  }
 }
